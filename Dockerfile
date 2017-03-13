@@ -123,9 +123,9 @@ RUN chmod -R +r /etc/elasticsearch
 ### configure Logstash
 
 # certs/keys for Beats and Lumberjack input
-RUN mkdir -p /etc/pki/tls/certs && mkdir /etc/pki/tls/private
-ADD ./logstash-beats.crt /etc/pki/tls/certs/logstash-beats.crt
-ADD ./logstash-beats.key /etc/pki/tls/private/logstash-beats.key
+# RUN mkdir -p /etc/pki/tls/certs && mkdir /etc/pki/tls/private
+# ADD ./logstash-beats.crt /etc/pki/tls/certs/logstash-beats.crt
+# ADD ./logstash-beats.key /etc/pki/tls/private/logstash-beats.key
 
 # filters
 ADD ./02-beats-input.conf /etc/logstash/conf.d/02-beats-input.conf
