@@ -84,6 +84,8 @@ ADD ./logstash-init /etc/init.d/logstash
 RUN sed -i -e 's#^LS_HOME=$#LS_HOME='$LOGSTASH_HOME'#' /etc/init.d/logstash \
  && chmod +x /etc/init.d/logstash
 
+WORKDIR ${LOGSTASH_HOME}
+RUN gosu logstash bin/logstash-plugin install logstash-filter-grok
 
 ### install Kibana
 
